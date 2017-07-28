@@ -21,8 +21,11 @@ sleep 5
 
   # Tell Docker to listen on port 4243 for remote API access. This is optional.
   echo DOCKER_OPTS="\"-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock\"" >> /etc/default/docker
+  mkdir -p /etc/systemd/system/docker.service.d/
+  echo "[Service]\nExecStart=\nExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock" > /etc/systemd/system/docker.service.d/override.conf 
 
   # Restart Docker to let port listening take effect.
+  systemctl daemon-reload
   service docker restart
 
 {{ else }}

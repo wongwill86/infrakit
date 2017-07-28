@@ -6,7 +6,7 @@
             "ID": "swarm-workers",
             "Properties": {
                 "Allocation": {
-                    "Size": 3
+                    "Size": 2
                 },
                 "Flavor": {
                     "Plugin": "flavor-swarm/worker",
@@ -21,7 +21,7 @@
                 "Instance": {
                     "Plugin": "instance-vagrant",
                     "Properties": {
-                        "Box": "williamyeh/ubuntu-trusty64-docker"  {{/* Already has Docker installed */}}
+                        "Box": "envimation/ubuntu-xenial-docker"  {{/* Already has Docker installed */}}
                     }
                 }
             }
@@ -34,9 +34,7 @@
             "Properties": {
                 "Allocation": {
                     "LogicalIDs": [
-                        "192.168.2.200",
-                        "192.168.2.201",
-                        "192.168.2.202"
+                        "192.168.2.200"
                     ]
                 },
                 "Flavor": {
@@ -52,7 +50,7 @@
                 "Instance": {
                     "Plugin": "instance-vagrant",
                     "Properties": {
-                        "Box": "williamyeh/ubuntu-trusty64-docker"  {{/* Already has Docker installed */}}
+                        "Box": "envimation/ubuntu-xenial-docker"  {{/* Already has Docker installed */}}
                     }
                 }
             }
